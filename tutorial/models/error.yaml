@@ -1,0 +1,11 @@
+title: Error
+type: object
+properties:
+  code:
+    type: string
+  message:
+    type: string
+required:
+  - code
+x-tags:
+  - Common

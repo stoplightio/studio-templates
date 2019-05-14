@@ -1,0 +1,22 @@
+{
+  "name": "example-plugin",
+  "version": "0.0.1",
+  "main": "./plugin.js",
+  "stoplight": {
+    "commands": [
+      {
+        "command": "notifications.info",
+        "title": "Send Info Notification"
+      }
+    ],
+    "keybindings": [
+      {
+        "commandId": "notifications.info",
+        "shortcut": "mod+n",
+        "args": [
+          "example-plugin triggered"
+        ]
+      }
+    ]
+  }
+}
