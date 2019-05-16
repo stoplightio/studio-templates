@@ -3,7 +3,7 @@
   "info": {
     "title": "To-dos",
     "version": "1.0",
-    "description": "This OpenAPI v2 (Swagger) file represents a real API that lives at http://todos.stoplight.io.\n\nFor authentication information, click the apikey security scheme in the editor sidebar.",
+    "description": "This OpenAPI v2 (Swagger) file represents a real API that lives at http://todos.stoplight.io.\n\nIt exposes functionality to manage to-do lists.",
     "contact": {
       "name": "Stoplight",
       "url": "https://stoplight.io"
