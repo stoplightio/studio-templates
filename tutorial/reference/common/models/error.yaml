@@ -1,5 +1,7 @@
+$schema: 'http://json-schema.org/draft-04/schema#'
 title: Error
 type: object
+description: A standard error object.
 properties:
   code:
     type: string

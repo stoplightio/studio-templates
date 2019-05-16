@@ -1,3 +1,4 @@
+$schema: 'http://json-schema.org/draft-04/schema#'
 title: Pet
 type: object
 xml:
@@ -7,7 +8,7 @@ properties:
     type: integer
     format: int64
   category:
-    $ref: category.json
+    $ref: ./category.yaml
   name:
     type: string
     example: doggie
@@ -30,3 +31,4 @@ required:
   - photoUrls
 x-tags:
   - Pets
+description: A single pet.

@@ -1,4 +1,5 @@
 {
+  "$schema": "http://json-schema.org/draft-04/schema#",
   "title": "User",
   "type": "object",
   "properties": {
@@ -17,6 +18,6 @@
     "age"
   ],
   "x-tags": [
-    "Common"
+    "Todos"
   ]
 }

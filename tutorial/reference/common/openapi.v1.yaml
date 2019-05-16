@@ -1,17 +1,3 @@
-swagger: '2.0'
-info:
-  version: '1.0'
-  title: Shared OpenAPI Components
-  description: This OpenAPI document includes a number of shared OpenAPI components,
-    such as responses.
-  contact:
-    name: Stoplight
-    url: https://stoplight.io
-  license:
-    name: MIT
-host: example.com
-securityDefinitions: {}
-paths: {}
 parameters:
   skip:
     in: query

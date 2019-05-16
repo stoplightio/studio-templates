@@ -1,9 +1,9 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "To-Dos Demo",
+    "title": "To-dos",
     "version": "1.0",
-    "description": "This OAS2 (Swagger 2) file represents a real API that lives at http://todos.stoplight.io.\n\nFor authentication information, click the apikey security scheme in the editor sidebar.",
+    "description": "This OpenAPI v2 (Swagger) file represents a real API that lives at http://todos.stoplight.io.\n\nFor authentication information, click the apikey security scheme in the editor sidebar.",
     "contact": {
       "name": "Stoplight",
       "url": "https://stoplight.io"
@@ -27,9 +27,14 @@
       "name": "apikey",
       "type": "apiKey",
       "in": "query",
-      "description": "#### Use ?apikey=123 to authenticate requests. Super secure, we know ;)."
+      "description": "Use `?apikey=123` to authenticate requests. It's super secure."
     }
   },
+  "tags": [
+    {
+      "name": "Todos"
+    }
+  ],
   "paths": {
     "/todos/{todoId}": {
       "parameters": [
@@ -50,7 +55,7 @@
           "200": {
             "description": "",
             "schema": {
-              "$ref": "#/definitions/todo-full"
+              "$ref": "./models/todo-full.json"
             },
             "examples": {
               "application/json": {
@@ -60,15 +65,14 @@
                 "completed_at": "1955-04-23T13:22:52.685Z",
                 "created_at": "1994-11-05T03:26:51.471Z",
                 "updated_at": "1989-07-29T11:30:06.701Z"
-              },
-              "random": "{\n\t\"foo\": \"bar\"\n}\n"
+              }
             }
           },
           "404": {
-            "$ref": "./shared.oas2.yml#/responses/404"
+            "$ref": "../common/openapi.v1.yaml#/responses/404"
           },
           "500": {
-            "$ref": "./shared.oas2.yml#/responses/500"
+            "$ref": "../common/openapi.v1.yaml#/responses/500"
           }
         }
       },
@@ -83,7 +87,7 @@
             "name": "body",
             "in": "body",
             "schema": {
-              "$ref": "#/definitions/todo-partial",
+              "$ref": "./models/todo-partial.json",
               "example": {
                 "name": "my todo's new name",
                 "completed": false
@@ -95,7 +99,7 @@
           "200": {
             "description": "",
             "schema": {
-              "$ref": "#/definitions/todo-full"
+              "$ref": "./models/todo-full.json"
             },
             "examples": {
               "application/json": {
@@ -109,13 +113,13 @@
             }
           },
           "401": {
-            "$ref": "./shared.oas2.yml#/responses/401"
+            "$ref": "../common/openapi.v1.yaml#/responses/401"
           },
           "404": {
-            "$ref": "./shared.oas2.yml#/responses/404"
+            "$ref": "../common/openapi.v1.yaml#/responses/404"
           },
           "500": {
-            "$ref": "./shared.oas2.yml#/responses/500"
+            "$ref": "../common/openapi.v1.yaml#/responses/500"
           }
         },
         "security": [
@@ -135,13 +139,13 @@
             "description": ""
           },
           "401": {
-            "$ref": "./shared.oas2.yml#/responses/401"
+            "$ref": "../common/openapi.v1.yaml#/responses/401"
           },
           "404": {
-            "$ref": "./shared.oas2.yml#/responses/404"
+            "$ref": "../common/openapi.v1.yaml#/responses/404"
           },
           "500": {
-            "$ref": "./shared.oas2.yml#/responses/500"
+            "$ref": "../common/openapi.v1.yaml#/responses/500"
           }
         },
         "security": [
@@ -163,35 +167,19 @@
             "name": "body",
             "in": "body",
             "schema": {
-              "$ref": "#/definitions/todo-partial",
+              "$ref": "./models/todo-partial.json",
               "example": {
                 "name": "my todo's name",
                 "completed": false
               }
             }
-          },
-          {
-            "in": "header",
-            "type": "string",
-            "name": "foo"
-          },
-          {
-            "in": "query",
-            "type": "string",
-            "name": "Bar"
-          },
-          {
-            "in": "header",
-            "type": "string",
-            "name": "fee",
-            "description": "This is the description\n\nFoo bar oinwe foin \n\noiwenf oiwf "
           }
         ],
         "responses": {
           "201": {
             "description": "",
             "schema": {
-              "$ref": "#/definitions/todo-full"
+              "$ref": "./models/todo-full.json"
             },
             "examples": {
               "application/json": {
@@ -205,10 +193,10 @@
             }
           },
           "401": {
-            "$ref": "./shared.oas2.yml#/responses/401"
+            "$ref": "../common/openapi.v1.yaml#/responses/401"
           },
           "500": {
-            "$ref": "./shared.oas2.yml#/responses/500"
+            "$ref": "../common/openapi.v1.yaml#/responses/500"
           }
         },
         "security": [
@@ -226,10 +214,10 @@
         ],
         "parameters": [
           {
-            "$ref": "./shared.oas2.yml#/parameters/limit"
+            "$ref": "../common/openapi.v1.yaml#/parameters/limit"
           },
           {
-            "$ref": "./shared.oas2.yml#/parameters/skip"
+            "$ref": "../common/openapi.v1.yaml#/parameters/skip"
           }
         ],
         "responses": {
@@ -238,7 +226,7 @@
             "schema": {
               "type": "array",
               "items": {
-                "$ref": "#/definitions/todo-full"
+                "$ref": "./models/todo-full.json"
               }
             },
             "examples": {
@@ -258,103 +246,14 @@
                   "name": "code the thingz",
                   "completed": false
                 }
-              ],
-              "empty": []
+              ]
             }
           },
           "500": {
-            "$ref": "./shared.oas2.yml#/responses/500"
+            "$ref": "../common/openapi.v1.yaml#/responses/500"
           }
         }
       }
     }
-  },
-  "parameters": {
-    "limit": {
-      "name": "limit",
-      "in": "query",
-      "description": "This is how it works.",
-      "required": false,
-      "type": "integer",
-      "maximum": 100
-    },
-    "skip": {
-      "name": "skip",
-      "in": "query",
-      "required": false,
-      "type": "string"
-    }
-  },
-  "definitions": {
-    "todo-partial": {
-      "title": "Todo Partial",
-      "type": "object",
-      "properties": {
-        "name": {
-          "type": "string"
-        },
-        "completed": {
-          "type": [
-            "boolean",
-            "null"
-          ]
-        }
-      },
-      "required": [
-        "name",
-        "completed"
-      ],
-      "x-tags": [
-        "Todos"
-      ]
-    },
-    "todo-full": {
-      "title": "Todo Full",
-      "allOf": [
-        {
-          "$ref": "#/definitions/todo-partial"
-        },
-        {
-          "type": "object",
-          "properties": {
-            "id": {
-              "type": "integer",
-              "minimum": 0,
-              "maximum": 1000000
-            },
-            "completed_at": {
-              "type": [
-                "string",
-                "null"
-              ],
-              "format": "date-time"
-            },
-            "created_at": {
-              "type": "string",
-              "format": "date-time"
-            },
-            "updated_at": {
-              "type": "string",
-              "format": "date-time"
-            },
-            "user": {
-              "$ref": "../models/user.json"
-            }
-          },
-          "required": [
-            "id",
-            "user"
-          ]
-        }
-      ],
-      "x-tags": [
-        "Todos"
-      ]
-    }
-  },
-  "tags": [
-    {
-      "name": "Todos"
-    }
-  ]
+  }
 }
