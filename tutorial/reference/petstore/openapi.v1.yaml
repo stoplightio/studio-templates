@@ -32,13 +32,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: ./models/pet.yaml
+                $ref: ./models/pet.v1.yaml
         default:
           description: unexpected error
           content:
             application/json:
               schema:
-                $ref: ../common/models/error.yaml
+                $ref: ../common/models/error.v1.yaml
     post:
       summary: Create a pet
       operationId: createPets
@@ -52,7 +52,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: ../common/models/error.yaml
+                $ref: ../common/models/error.v1.yaml
   '/pets/{petId}':
     get:
       summary: Info for a specific pet
@@ -72,19 +72,19 @@ paths:
           content:
             application/json:
               schema:
-                $ref: ./models/pet.yaml
+                $ref: ./models/pet.v1.yaml
         default:
           description: unexpected error
           content:
             application/json:
               schema:
-                $ref: ../common/models/error.yaml
+                $ref: ../common/models/error.v1.yaml
 components:
   schemas:
     Pets:
       type: array
       items:
-        $ref: ./models/pet.yaml
+        $ref: ./models/pet.v1.yaml
       x-tags:
         - Pets
       title: Pets

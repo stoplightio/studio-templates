@@ -15,7 +15,7 @@ responses:
   '401':
     description: Our shared 401 response.
     schema:
-      '$ref': '../models/error.yaml'
+      '$ref': './models/error.v1.yaml'
     examples:
       application/json:
         code: '401'
@@ -23,7 +23,7 @@ responses:
   '403':
     description: Our shared 403 response.
     schema:
-      '$ref': '../models/error.yaml'
+      '$ref': './models/error.v1.yaml'
     examples:
       application/json:
         code: '403'
@@ -31,7 +31,7 @@ responses:
   '404':
     description: Our shared 404 response.
     schema:
-      '$ref': '../models/error.yaml'
+      '$ref': './models/error.v1.yaml'
     examples:
       application/json:
         code: '404'
@@ -39,7 +39,7 @@ responses:
   '500':
     description: Our shared 500 response.
     schema:
-      '$ref': '../models/error.yaml'
+      '$ref': './models/error.v1.yaml'
     examples:
       application/json:
         code: '500'

@@ -3,7 +3,7 @@
   "title": "Todo Full",
   "allOf": [
     {
-      "$ref": "./todo-partial.json"
+      "$ref": "./todo-partial.v1.json"
     },
     {
       "type": "object",
@@ -29,7 +29,7 @@
           "format": "date-time"
         },
         "user": {
-          "$ref": "../models/user.json"
+          "$ref": "./user.v1.json"
         }
       },
       "required": [

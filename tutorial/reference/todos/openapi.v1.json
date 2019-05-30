@@ -55,7 +55,7 @@
           "200": {
             "description": "",
             "schema": {
-              "$ref": "./models/todo-full.json"
+              "$ref": "./models/todo-full.v1.json"
             },
             "examples": {
               "application/json": {
@@ -87,7 +87,7 @@
             "name": "body",
             "in": "body",
             "schema": {
-              "$ref": "./models/todo-partial.json",
+              "$ref": "./models/todo-partial.v1.json",
               "example": {
                 "name": "my todo's new name",
                 "completed": false
@@ -99,7 +99,7 @@
           "200": {
             "description": "",
             "schema": {
-              "$ref": "./models/todo-full.json"
+              "$ref": "./models/todo-full.v1.json"
             },
             "examples": {
               "application/json": {
@@ -167,7 +167,7 @@
             "name": "body",
             "in": "body",
             "schema": {
-              "$ref": "./models/todo-partial.json",
+              "$ref": "./models/todo-partial.v1.json",
               "example": {
                 "name": "my todo's name",
                 "completed": false
@@ -179,7 +179,7 @@
           "201": {
             "description": "",
             "schema": {
-              "$ref": "./models/todo-full.json"
+              "$ref": "./models/todo-full.v1.json"
             },
             "examples": {
               "application/json": {
@@ -226,7 +226,7 @@
             "schema": {
               "type": "array",
               "items": {
-                "$ref": "./models/todo-full.json"
+                "$ref": "./models/todo-full.v1.json"
               }
             },
             "examples": {
