@@ -6,7 +6,7 @@ tags: [01. Using Markdown]
 
 ### The Two Laws
 
-1.  SMD is human readable. A human with a simple text editor can easily read and comprehend smd.
+1.  SMD is human readable. A human with a simple text editor can easily read and write smd.
 2.  SMD degrades gracefully. SMD documents rendered on `github.com` should be clean and readable.
 
 ### The Approach
@@ -44,34 +44,6 @@ A callout is a md block quote with an optional annotation that indicates intent.
 >
 > Here is my info callout
 
-#### Markdown Sample
-
-```md
-<!-- theme: danger -->
-
-> ### **Danger Will Robinson!**
->
-> Here is my danger callout!
-
-<!-- theme: warning -->
-
-> ### **Watch Out!**
->
-> Here is my warning callout!
-
-<!-- theme: success -->
-
-> ### **Mission Accomplished!**
->
-> Here is my success callout!
-
-<!-- theme: info -->
-
-> ### **A thing to know**
->
-> Here is my info callout
-```
-
 ## Code Blocks
 
 A smd code block is md code fence with an optional annotation to tweak the presentation of the code block.
@@ -99,17 +71,9 @@ function fibonacci(num){
 
 ## JSON Schema
 
-A smd json schema block is a md code block with a `json_schema` type annotation. The contents of the code fence should be the json schema object to be rendered.
+The smd json schema block is a md code block with an additional `json_schema` language tag. The contents of the code fence should be the json schema object to be rendered. The primary language tag can be `yaml`, `yml`, or `json`.
 
-<!-- theme: warning -->
-
-> The example below uses a `json_schema` language tag rather than `json`. This will be fixed in a future release.
-
-#### User
-
-<!-- type: json_schema -->
-
-```json_schema
+```json json_schema
 {
   "title": "User",
   "type": "object",
@@ -134,6 +98,18 @@ A smd json schema block is a md code block with a `json_schema` type annotation.
 }
 ```
 
+## Tables
+
+Use a type annotation to add a title to a table.
+
+<!-- title: My Table Title -->
+
+| Tables        |      Are      |  Cool |
+| ------------- | :-----------: | ----: |
+| col 3 is      | right-aligned | $1600 |
+| col 2 is      |    centered   |   $12 |
+| zebra stripes |    are neat   |    $1 |
+
 ## Tabs
 
 A smd tab container is a `tab` annotation, followed by the tab content, and closed by a final `tab-end` annotation.
@@ -157,26 +133,6 @@ title: My Second Tab
 The contents of tab 2.
 
 <!-- type: tab-end -->
-
-#### Markdown Sample
-
-```md
-<!--
-type: tab
-title: My First Tab
--->
-
-The contents of tab 1.
-
-<!--
-type: tab
-title: My Second Tab
--->
-
-The contents of tab 2.
-
-<!-- type: tab-end -->
-```
 
 ---
 
