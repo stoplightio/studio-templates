@@ -8,13 +8,15 @@ Studio is our next generation app for API design, modeling, and technical writin
 
 > A primary goal of Studio is to enrich, not replace, your existing workflows. It works offline, with folders and files on your computer, just like your favorite IDEs.
 
+Read the full [Studio Docs](https://stoplight.io/p/docs/gh/stoplightio/studio).
+
 Here is some of what it can do:
 
-- **OpenAPI v2 AND v3:** Form based design mode means you don't need to be an OpenAPI expert to get started. Studio also supports OpenAPI autocomplete in write mode, a read mode to visualize HTTP operations and models, mocking, and linting for OpenAPI v2 and v3.
+- **OpenAPI v2 and v3:** Form based design mode means you don't need to be an OpenAPI expert to get started. Studio also supports OpenAPI autocomplete in write mode, a read mode to visualize HTTP operations and models, mocking, and linting for OpenAPI v2 and v3.
 - **Standalone JSON Schema Modeling:** Studio encourages you to split your models into separate files, and then makes it easy to create `$refs` between them.
-- **Stoplight Flavored Markdown:** SMD is an optional, lightweight extension to regular markdown. It enables a few advanced features such as tabs and callouts.
-- **Combine Reference and Implementation:** Since Studio works with your local filesystem, you can open up your API projects and start adding docs and designs alongside the actual implementation they are meant to describe. Once you're done, check it all into Git with your favorite Git client!
-- **Manage Mock Servers:** When Prism is enabled (via experimental features setting), Studio will automatically start a local mock server for every API defined in your project, and keep that mock server up to date as you change your designs.
+- **Stoplight Flavored Markdown:** [SMD](./markdown/stoplight-flavored-markdown.md) is an optional, lightweight extension to regular markdown. It enables a few advanced features such as tabs and callouts.
+- **Combine Reference and Implementation:** Since Studio works with your local filesystem, you can open up your API projects and start adding docs and designs alongside the actual implementation they are meant to describe. Once you're done, check it all into git with your favorite git client!
+- **Manage Mock Servers:** Studio automatically starts local mock servers for every API defined in your project, and keeps those mock servers up to date as you change your designs.
 
 <!-- theme: warning -->
 

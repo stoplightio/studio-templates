@@ -1,13 +1,9 @@
----
-tags: [01. Using Markdown]
----
+# Stoplight Flavored Markdown
 
-# Stoplight Flavored Markdown (SMD)
-
-### The Two Laws
+Stoplight flavored markdown (SMD for short) was created with a couple of guiding principles in mind:
 
 1.  SMD is human readable. A human with a simple text editor can easily read and write smd.
-2.  SMD degrades gracefully. SMD documents rendered on `github.com` should be clean and readable.
+2.  SMD degrades gracefully. SMD documents rendered on `github.com` should be clean and readable. No gross templating syntax, etc.
 
 ### The Approach
 
@@ -22,25 +18,25 @@ A callout is a md block quote with an optional annotation that indicates intent.
 
 <!-- theme: danger -->
 
-> ### **Danger Will Robinson!**
+> ### Danger Will Robinson!
 >
 > Here is my danger callout!
 
 <!-- theme: warning -->
 
-> ### **Watch Out!**
+> ### Watch Out!
 >
 > Here is my warning callout!
 
 <!-- theme: success -->
 
-> ### **Mission Accomplished!**
+> ### Mission Accomplished!
 >
 > Here is my success callout!
 
 <!-- theme: info -->
 
-> ### **A thing to know**
+> ### A thing to know
 >
 > Here is my info callout
 
