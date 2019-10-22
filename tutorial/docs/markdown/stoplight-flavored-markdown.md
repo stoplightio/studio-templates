@@ -65,9 +65,21 @@ function fibonacci(num){
 }
 ```
 
+## Tables
+
+Use a type annotation to add a title to a table.
+
+<!-- title: My Table Title -->
+
+| Tables        |      Are      |  Cool |
+| ------------- | :-----------: | ----: |
+| col 3 is      | right-aligned | $1600 |
+| col 2 is      |    centered   |   $12 |
+| zebra stripes |    are neat   |    $1 |
+
 ## JSON Schema
 
-The smd json schema block is a md code block with an additional `json_schema` language tag. The contents of the code fence should be the json schema object to be rendered. The primary language tag can be `yaml`, `yml`, or `json`.
+A JSON schema block is a `json` code block with an additional `json_schema` language tag. The contents of the code fence should be the JSON schema object to be rendered. The primary language tag can be `yaml`, `yml`, or `json`.
 
 ```json json_schema
 {
@@ -94,21 +106,9 @@ The smd json schema block is a md code block with an additional `json_schema` la
 }
 ```
 
-## Tables
-
-Use a type annotation to add a title to a table.
-
-<!-- title: My Table Title -->
-
-| Tables        |      Are      |  Cool |
-| ------------- | :-----------: | ----: |
-| col 3 is      | right-aligned | $1600 |
-| col 2 is      |    centered   |   $12 |
-| zebra stripes |    are neat   |    $1 |
-
 ## Tabs
 
-A smd tab container is a `tab` annotation, followed by the tab content, and closed by a final `tab-end` annotation.
+A tab container is a `tab` annotation, followed by the tab content, and closed by a final `tab-end` annotation.
 
 <!-- theme: danger -->
 
@@ -116,17 +116,46 @@ A smd tab container is a `tab` annotation, followed by the tab content, and clos
 
 <!--
 type: tab
-title: My First Tab
+title: Schema
 -->
 
-The contents of tab 1.
+```json json_schema
+{
+  "title": "User",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string",
+      "description": "The user's full name."
+    },
+    "age": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 150
+    }    
+  },
+  "required": [
+    "id",
+    "name"
+  ]
+}
+```
 
 <!--
 type: tab
-title: My Second Tab
+title: Example
 -->
 
-The contents of tab 2.
+```json
+{
+  "id": "xxx",
+  "name": "Chris",
+  "age": 27
+}
+```
 
 <!-- type: tab-end -->
 
