@@ -1,7 +1,3 @@
----
-tags: [00. Welcome]
----
-
 # Intro
 
 Studio is our next generation app for API design, modeling, and technical writing. 
@@ -17,10 +13,6 @@ Here is some of what it can do:
 - **Stoplight Flavored Markdown:** [SMD](./markdown/stoplight-flavored-markdown.md) is an optional, lightweight extension to regular markdown. It enables a few advanced features such as tabs and callouts.
 - **Combine Reference and Implementation:** Since Studio works with your local filesystem, you can open up your API projects and start adding docs and designs alongside the actual implementation they are meant to describe. Once you're done, check it all into git with your favorite git client!
 - **Manage Mock Servers:** Studio automatically starts local mock servers for every API defined in your project, and keeps those mock servers up to date as you change your designs.
-
-<!-- theme: warning -->
-
-> This is a early beta release of Studio, and we're just getting started! We will be working to polish and add a number of new features to Studio in the short term.
 
 ### A Note on this Personal Space
 

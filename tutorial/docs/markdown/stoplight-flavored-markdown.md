@@ -3,7 +3,7 @@
 Stoplight flavored markdown (SMD for short) was created with a couple of guiding principles in mind:
 
 1.  SMD is human readable. A human with a simple text editor can easily read and write smd.
-2.  SMD degrades gracefully. SMD documents rendered on `github.com` should be clean and readable. No gross templating syntax, etc.
+2.  SMD degrades gracefully. For example, SMD documents rendered by `github.com` should be clean and readable. No ugly templating syntax, etc.
 
 ### The Approach
 
@@ -15,6 +15,32 @@ By leveraging comments to store annotations, Stoplight flavored markdown degrade
 ## Callouts
 
 A callout is a md block quote with an optional annotation that indicates intent.
+
+```md
+  <!-- theme: danger -->
+
+  > ### Danger Will Robinson!
+  >
+  > Here is my danger callout!
+
+  <!-- theme: warning -->
+
+  > ### Watch Out!
+  >
+  > Here is my warning callout!
+
+  <!-- theme: success -->
+
+  > ### Mission Accomplished!
+  >
+  > Here is my success callout!
+
+  <!-- theme: info -->
+
+  > ### A thing to know
+  >
+  > Here is my info callout
+  ```
 
 <!-- theme: danger -->
 
@@ -44,6 +70,33 @@ A callout is a md block quote with an optional annotation that indicates intent.
 
 A smd code block is md code fence with an optional annotation to tweak the presentation of the code block.
 
+<!-- theme: warning -->
+
+> In the examples below, remove the `\` that precedes the three backticks at the start and end of the javascript code fence before using.
+
+```md
+<!--
+title: "My code snippet"
+lineNumbers: true
+highlightLines: [[1,2], [4,5]]
+-->
+
+\```javascript
+function fibonacci(num){
+  var a = 1, b = 0, temp;
+
+  while (num >= 0){
+    temp = a;
+    a = a + b;
+    b = temp;
+    num--;
+  }
+
+  return b;
+}
+\```
+```
+
 <!--
 title: "My code snippet"
 lineNumbers: true
@@ -69,6 +122,16 @@ function fibonacci(num){
 
 Use a type annotation to add a title to a table.
 
+```md
+<!-- title: My Table Title -->
+
+| Tables        |      Are      |  Cool |
+| ------------- | :-----------: | ----: |
+| col 3 is      | right-aligned | $1600 |
+| col 2 is      |    centered   |   $12 |
+| zebra stripes |    are neat   |    $1 |
+```
+
 <!-- title: My Table Title -->
 
 | Tables        |      Are      |  Cool |
@@ -80,6 +143,37 @@ Use a type annotation to add a title to a table.
 ## JSON Schema
 
 A JSON schema block is a `json` code block with an additional `json_schema` language tag. The contents of the code fence should be the JSON schema object to be rendered. The primary language tag can be `yaml`, `yml`, or `json`.
+
+<!-- theme: warning -->
+
+> In the examples below, remove the `\` that precedes the three backticks at the start and end of the json code fence before using.
+
+```md
+\```json json_schema
+{
+  "title": "User",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string",
+      "description": "The user's full name."
+    },
+    "age": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 150
+    }    
+  },
+  "required": [
+    "id",
+    "name"
+  ]
+}
+\```
+```
 
 ```json json_schema
 {
@@ -113,6 +207,53 @@ A tab container is a `tab` annotation, followed by the tab content, and closed b
 <!-- theme: danger -->
 
 > Tab containers cannot be nested.
+
+```md
+<!--
+type: tab
+title: Schema
+-->
+
+\```json json_schema
+{
+  "title": "User",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string",
+      "description": "The user's full name."
+    },
+    "age": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 150
+    }    
+  },
+  "required": [
+    "id",
+    "name"
+  ]
+}
+\```
+
+<!--
+type: tab
+title: Example
+-->
+
+\```json
+{
+  "id": "xxx",
+  "name": "Chris",
+  "age": 27
+}
+\```
+
+<!-- type: tab-end -->
+```
 
 <!--
 type: tab

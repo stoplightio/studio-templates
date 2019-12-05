@@ -1,8 +1,3 @@
----
-title: UI Overview
-tags: [00. Welcome]
----
-
 # UI Overview
 
 ![](../assets/images/studio-overview.png)

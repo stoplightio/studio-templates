@@ -87,11 +87,7 @@
             "name": "body",
             "in": "body",
             "schema": {
-              "$ref": "./models/todo-partial.v1.json",
-              "example": {
-                "name": "my todo's new name",
-                "completed": false
-              }
+              "$ref": "./models/todo-partial.v1.json"
             }
           }
         ],
@@ -167,11 +163,7 @@
             "name": "body",
             "in": "body",
             "schema": {
-              "$ref": "./models/todo-partial.v1.json",
-              "example": {
-                "name": "my todo's name",
-                "completed": false
-              }
+              "$ref": "./models/todo-partial.v1.json"
             }
           }
         ],
