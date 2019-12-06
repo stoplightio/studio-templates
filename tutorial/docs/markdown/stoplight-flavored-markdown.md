@@ -5,7 +5,7 @@ Stoplight flavored markdown (SMD for short) was created with a couple of guiding
 1.  SMD is human readable. A human with a simple text editor can easily read and write smd.
 2.  SMD degrades gracefully. For example, SMD documents rendered by `github.com` should be clean and readable. No ugly templating syntax, etc.
 
-### The Approach
+**The Approach:**
 
 1.  Stoplight flavored markdown extends github flavor markdown with inline comment annotations.
 2.  The value inside of the annotations is a yaml object, and the annotation affects the markdown block that directly follows it in the document.
@@ -17,30 +17,30 @@ By leveraging comments to store annotations, Stoplight flavored markdown degrade
 A callout is a md block quote with an optional annotation that indicates intent.
 
 ```md
-  <!-- theme: danger -->
+<!-- theme: danger -->
 
-  > ### Danger Will Robinson!
-  >
-  > Here is my danger callout!
+> ### Danger Will Robinson!
+>
+> Here is my danger callout!
 
-  <!-- theme: warning -->
+<!-- theme: warning -->
 
-  > ### Watch Out!
-  >
-  > Here is my warning callout!
+> ### Watch Out!
+>
+> Here is my warning callout!
 
-  <!-- theme: success -->
+<!-- theme: success -->
 
-  > ### Mission Accomplished!
-  >
-  > Here is my success callout!
+> ### Mission Accomplished!
+>
+> Here is my success callout!
 
-  <!-- theme: info -->
+<!-- theme: info -->
 
-  > ### A thing to know
-  >
-  > Here is my info callout
-  ```
+> ### A thing to know
+>
+> Here is my info callout
+```
 
 <!-- theme: danger -->
 
@@ -74,7 +74,7 @@ A smd code block is md code fence with an optional annotation to tweak the prese
 
 > In the examples below, remove the `\` that precedes the three backticks at the start and end of the javascript code fence before using.
 
-```md
+````md
 <!--
 title: "My code snippet"
 lineNumbers: true
@@ -95,7 +95,7 @@ function fibonacci(num){
   return b;
 }
 \```
-```
+````
 
 <!--
 title: "My code snippet"
@@ -148,7 +148,7 @@ A JSON schema block is a `json` code block with an additional `json_schema` lang
 
 > In the examples below, remove the `\` that precedes the three backticks at the start and end of the json code fence before using.
 
-```md
+````md
 \```json json_schema
 {
   "title": "User",
@@ -173,7 +173,7 @@ A JSON schema block is a `json` code block with an additional `json_schema` lang
   ]
 }
 \```
-```
+````
 
 ```json json_schema
 {
@@ -208,7 +208,7 @@ A tab container is a `tab` annotation, followed by the tab content, and closed b
 
 > Tab containers cannot be nested.
 
-```md
+````md
 <!--
 type: tab
 title: Schema
@@ -253,7 +253,7 @@ title: Example
 \```
 
 <!-- type: tab-end -->
-```
+````
 
 <!--
 type: tab
@@ -300,6 +300,66 @@ title: Example
 
 <!-- type: tab-end -->
 
----
+## HTTP Request Maker
 
-*FIN.*
+The HTTP Request block allows you to embed example requests directly in your articles. 
+
+The HTTP Request block is a `json` or `yaml` code block with an additional `http` language tag. The contents of the code fence should be a HTTP request object (format described below). The Stoplight Studio markdown preview panel includes an embedded editor to help you put together 
+
+<!-- theme: warning -->
+
+> In the examples below, remove the `\` that precedes the three backticks at the start and end of the yaml code fence before using.
+
+```
+\```yaml http
+{
+  "method": "get",
+  "url": "http://todos.stoplight.io/todos"
+}
+\```
+```
+
+**Renders an embedded request maker!**
+
+```yaml http
+{
+  "method": "get",
+  "url": "http://todos.stoplight.io/todos"
+}
+```
+
+**HTTP request object format:**
+
+```json json_schema
+{
+  "title": "HTTP Request Object",
+  "description": "This object describes the example request that you would like to embed.",
+  "type": "object",
+  "properties": {
+    "method": {
+      "type": "string",
+      "enum": ["get", "post", "put", "patch", "delete", "options", "head"]
+    },
+    "url": {
+      "type": "string"
+    },
+    "query": {
+      "type": "object"
+    },
+    "headers": {
+      "type": "object"
+    },
+    "body": {
+      "type": ["object", "string"]
+    }
+  },
+  "required": [
+    "method",
+    "url"
+  ]
+}
+```
+
+* * *
+
+_FIN._
