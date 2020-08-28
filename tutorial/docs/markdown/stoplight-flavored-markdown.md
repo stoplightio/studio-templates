@@ -70,10 +70,6 @@ A callout is a md block quote with an optional annotation that indicates intent.
 
 A smd code block is md code fence with an optional annotation to tweak the presentation of the code block.
 
-<!-- theme: warning -->
-
-> In the examples below, remove the `\` that precedes the three backticks at the start and end of the javascript code fence before using.
-
 ````md
 <!--
 title: "My code snippet"
@@ -143,10 +139,6 @@ Use a type annotation to add a title to a table.
 ## JSON Schema
 
 A JSON schema block is a `json` code block with an additional `json_schema` language tag. The contents of the code fence should be the JSON schema object to be rendered. The primary language tag can be `yaml`, `yml`, or `json`.
-
-<!-- theme: warning -->
-
-> In the examples below, remove the `\` that precedes the three backticks at the start and end of the json code fence before using.
 
 ````md
 ```json json_schema
@@ -305,10 +297,6 @@ title: Example
 The HTTP Request block allows you to embed example requests directly in your articles. 
 
 The HTTP Request block is a `json` or `yaml` code block with an additional `http` language tag. The contents of the code fence should be a HTTP request object (format described below). The Stoplight Studio markdown preview panel includes an embedded editor to help you put together 
-
-<!-- theme: warning -->
-
-> In the examples below, remove the `\` that precedes the three backticks at the start and end of the yaml code fence before using.
 
 ````
 ```yaml http
