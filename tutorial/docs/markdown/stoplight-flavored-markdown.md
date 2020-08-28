@@ -81,7 +81,7 @@ lineNumbers: true
 highlightLines: [[1,2], [4,5]]
 -->
 
-\```javascript
+```javascript
 function fibonacci(num){
   var a = 1, b = 0, temp;
 
@@ -94,7 +94,7 @@ function fibonacci(num){
 
   return b;
 }
-\```
+```
 ````
 
 <!--
@@ -149,7 +149,7 @@ A JSON schema block is a `json` code block with an additional `json_schema` lang
 > In the examples below, remove the `\` that precedes the three backticks at the start and end of the json code fence before using.
 
 ````md
-\```json json_schema
+```json json_schema
 {
   "title": "User",
   "type": "object",
@@ -172,7 +172,7 @@ A JSON schema block is a `json` code block with an additional `json_schema` lang
     "name"
   ]
 }
-\```
+```
 ````
 
 ```json json_schema
@@ -214,7 +214,7 @@ type: tab
 title: Schema
 -->
 
-\```json json_schema
+```json json_schema
 {
   "title": "User",
   "type": "object",
@@ -237,20 +237,20 @@ title: Schema
     "name"
   ]
 }
-\```
+```
 
 <!--
 type: tab
 title: Example
 -->
 
-\```json
+```json
 {
   "id": "xxx",
   "name": "Chris",
   "age": 27
 }
-\```
+```
 
 <!-- type: tab-end -->
 ````
@@ -310,14 +310,14 @@ The HTTP Request block is a `json` or `yaml` code block with an additional `http
 
 > In the examples below, remove the `\` that precedes the three backticks at the start and end of the yaml code fence before using.
 
-```
-\```yaml http
+````
+```yaml http
 {
   "method": "get",
   "url": "http://todos.stoplight.io/todos"
 }
-\```
 ```
+````
 
 **Renders an embedded request maker!**
 
