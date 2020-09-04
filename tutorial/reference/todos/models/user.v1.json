@@ -15,8 +15,5 @@
   "required": [
     "name",
     "age"
-  ],
-  "x-tags": [
-    "Todos"
   ]
 }

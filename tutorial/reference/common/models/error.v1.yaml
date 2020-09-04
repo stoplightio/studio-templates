@@ -8,5 +8,3 @@ properties:
     type: string
 required:
   - code
-x-tags:
-  - Common

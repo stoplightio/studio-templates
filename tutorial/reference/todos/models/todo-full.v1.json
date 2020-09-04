@@ -1,43 +1,45 @@
 {
   "title": "Todo Full",
-  "allOf": [
-    {
-      "$ref": "./todo-partial.v1.json"
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "integer",
+      "minimum": 1
     },
-    {
-      "type": "object",
-      "properties": {
-        "id": {
-          "type": "integer",
-          "minimum": 0,
-          "maximum": 1000000
-        },
-        "completed_at": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "format": "date-time"
-        },
-        "created_at": {
-          "type": "string",
-          "format": "date-time"
-        },
-        "updated_at": {
-          "type": "string",
-          "format": "date-time"
-        },
-        "user": {
-          "$ref": "./user.v1.json"
-        }
-      },
-      "required": [
-        "id",
-        "user"
-      ]
+     "name": {
+      "type": "string",
+      "example": "Get groceries"
+    },
+    "completed": {
+      "type": "boolean",
+      "default": false
+    },
+    "completed_at": {
+      "type": "string",
+      "nullable": true,
+      "format": "date-time"
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time",
+      "readOnly": true
+    },
+    "updated_at": {
+      "type": "string",
+      "nullable": true,
+      "format": "date-time",
+      "readOnly": true
+    },
+    "user": {
+      "$ref": "./user.v1.json"
     }
-  ],
-  "x-tags": [
-    "Todos"
+  },
+  "required": [
+    "id",
+    "name",
+    "completed",
+    "completed_at",
+    "created_at",
+    "updated_at"
   ]
 }
