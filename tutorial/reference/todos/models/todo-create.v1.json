@@ -1,0 +1,14 @@
+{
+  "title": "Todo Create",
+  "type": "object",
+  "properties": {
+    "name": { "$ref": "./todo-full.v1.json#/properties/name" },
+    "completed": { "$ref": "./todo-full.v1.json#/properties/completed" },
+    "completed_at": { "$ref": "./todo-full.v1.json#/properties/completed_at" },
+    "user" : { "$ref": "./todo-full.v1.json#/properties/user" }
+  },
+  "required": [
+    "name",
+    "completed"
+  ]
+}
